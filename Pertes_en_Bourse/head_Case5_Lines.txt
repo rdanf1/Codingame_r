@@ -1,0 +1,10 @@
+# DR - jeu. 04 août 2022 00:13:28 CEST - 
+# What the command was to create this file (LOL) : 
+
+echo -e "# DR - $(date) - \n# What the command was to create this file (LOL) : \n" > Case5_Lines.txt && cat BOUBOURSE.SAMPLE_5.SHIT_99999.txt | tr ' ' '\n' > tmp.txt && history | tail -n 1 | tr -s ' ' | cut -d " " -f 3- >> Case5_Lines.txt && echo >> Case5_Lines.txt && cat tmp.txt >> Case5_Lines.txt && rm tmp.txt
+
+360206605
+753529295
+289276846
+389601008
+956209493
