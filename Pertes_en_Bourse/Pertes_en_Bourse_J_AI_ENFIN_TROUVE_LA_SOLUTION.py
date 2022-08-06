@@ -7,12 +7,6 @@ import math
 # Previous value of sample
 prev_v = -1
 
-# Current delta decreasing value cascading 
-# while previous sample value (prev_v) > next value (v)
-# Maybe it's useless ?!.. => YES IT IS USELESS
-# down = 0
-# max_down = -1
-
 # Begin / End of current delta decreasing...
 start_v = 0
 end_v = 1073732477
@@ -33,11 +27,7 @@ for i in input().split():
     else :
         # Not 1st element
         if prev_v < v:
-            '''
-            if max_down < down:
-                max_down = down
-            down = 0
-            '''
+ 
             if v > start_v :
 
                 start_v = v
@@ -50,9 +40,7 @@ for i in input().split():
 
                 end_v = v
                 start_end = start_v - end_v
-                
-            #down += prev_v - v
-            
+                           
     # Updating max delta- if more...
     if start_end > max_start_end :
         max_start_end = start_end
@@ -63,14 +51,7 @@ for i in input().split():
     #       prev_v, v, max_down, start_v, end_v, max_start_end, file=sys.stderr, flush=True)
     
     prev_v = v
-'''
-max_down = 0
-# Case #2 and #5
-if max_start_end > max_down:
-    answer = max_start_end 
-else:
-    answer = max_down
-'''
+
 # Write an answer using print
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
 
