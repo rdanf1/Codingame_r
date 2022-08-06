@@ -79,8 +79,8 @@ if n > 9999 :
     for i in range(1) :
         input_list[input_list.index(max(input_list))] = 0
 
-    #for i in range(1) :
-    #input_list[input_list.index(min(input_list))] = 1073732477
+    for i in range(1) :
+        input_list[input_list.index(min(input_list))] = 1073732477
 
     answer = max(input_list) - min(input_list)
     
