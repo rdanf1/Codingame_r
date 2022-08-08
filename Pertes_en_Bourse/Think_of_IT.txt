@@ -1,0 +1,14 @@
+DR - 09 Aug 2022 - Reflexions involved HERE...
+
+All functions from discrete integer series (any stream/source of values...)
+can be computed in parsing elements as current (v) & previous (prev_v) !?..
+
+=> No need to save in a tab[] !
+
+Elements of the answer :
+
+- It's a property of integers series (N ordonnated) - and recursing : initial, n, n+1
+
+- My recursing def (see Peano !) : If true for initial condition U(0), 
+                                   then if it's true for (n), it's true for (n+1) !
+                   
