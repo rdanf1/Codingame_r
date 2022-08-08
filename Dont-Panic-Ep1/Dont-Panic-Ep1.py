@@ -14,6 +14,9 @@ import math
 # nb_elevators: number of elevators
 nb_floors, width, nb_rounds, exit_floor, exit_pos, nb_total_clones, nb_additional_elevators, nb_elevators = [int(i) for i in input().split()]
 
+#TODO: Managing exit same way as elevators (thx professor QA)
+#elevators = {exit_floor: exit_pos}
+
 elevators = {}
 
 for i in range(nb_elevators):
@@ -40,8 +43,6 @@ while True:
     else:
         elevator_pos = -1
     
-    
-
     #print("inputs_list", clone_floor, exit_floor, clone_pos, exit_pos, 
     #       elevators, elevator_pos, inputs_list, file=sys.stderr, flush=True)
 
