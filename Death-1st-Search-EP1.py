@@ -13,6 +13,9 @@ import math
 # 1) the Hard part was to get rid of py key error ( initializing / building dict {int,[]} )
 # 2) Not optimum : sever when bobnet is at -1 or take his 1st link as given initially
 #       => BUT ELEGANT ! ( I think )
+# 3) See ENHANCEMENT ( beautiful #04 too := A picture of My method indeed ! )
+# 4) TODO : sever the good alternate link to block Bobnet previously... (EP2 ?!..)
+#
 
 # exit inodes
 ei_list = []
@@ -43,7 +46,7 @@ for i in range(l):
     li_dict[n1].append(n2)
     li_dict[n2].append(n1)   
 
-    print("n1, n2, li_dict", n1, n2, li_dict, file=sys.stderr, flush=True)
+    #print("n1, n2, li_dict", n1, n2, li_dict, file=sys.stderr, flush=True)
 
 
 for i in range(e):
@@ -65,7 +68,7 @@ while True:
         
     for find_ei in li_dict[si]:
 
-        print("find_ei, li_dict[si]", find_ei, li_dict[si], file=sys.stderr, flush=True)
+        print("ei_list, find_ei, li_dict[si]", ei_list, find_ei, li_dict[si], file=sys.stderr, flush=True)
         
         
         if find_ei in ei_list:
@@ -74,18 +77,25 @@ while True:
 
             print(str(int(si)) + " " + str(int(find_ei)))
 
-            # remove severed link
-            li_dict[si].remove(find_ei)
+            # ENHANCEMENT !
+            # remove severed link := *useless bcaus can cut again same link...
+            #     => 39 steps vs 38 without 
+            #         => Not worth IT ( I think )
+            # li_dict[si].remove(find_ei)
         
 
     # Pick one to sever ( 1st of li_dict[si] ! aka "- couper l'herbe sous les pieds..." )
     if not found :
-        # Not to repeat...
-        first_on_si_list = li_dict[si][0]
+        # Not to repeat... (optimized...)
+        #first_on_si_list = li_dict[si][0]
         
-        print(str(int(si)) + " " + str(int(first_on_si_list)))
+        print(str(int(si)) + " " + str(int(li_dict[si][0])))
         
-        li_dict[si].remove(first_on_si_list)
+        # ENHANCEMENT !
+        # remove severed link := *useless bcaus can cut again same link...
+        #     => 39 steps vs 38 without 
+        #         => Not worth IT ( I think )
+        #li_dict[si].remove(first_on_si_list)
 
     # Example: 0 1 are the indices of the nodes you wish to sever the link between
     #print("0 1")
