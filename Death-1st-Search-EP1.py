@@ -15,12 +15,19 @@ import math
 #       => BUT ELEGANT ! ( I think )
 # 3) See ENHANCEMENT ( beautiful #04 too := A picture of My method indeed ! )
 # 4) TODO : sever the good alternate link to block Bobnet previously... (EP2 ?!..)
+#     => I know HOWTO 
+#        :==> delete severed + 
+#             don't pick previous step of (si) if not near -1 (ei) ( new var : prev_si )
+#             (Initials Rules - Not Clever ! - : Dont delete severed, 
+#                                                Pick 1st indice of (ei) neighbors if not (-1)... 
+# 5) TODO2 : Anticipate (ei) moves [ What IA is behind IT ?!.. Can evolve ?!..  ]
 #
 
 # exit inodes
 ei_list = []
 
 # links dict of "inode (int) : linked inodes (list)" !! YES MAN !!
+# Initialized without LAME "import from components defaultype" THING ! (Sorry)
 li_dict = {}
 
 # Auto-generated code below aims at helping you parse
